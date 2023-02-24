@@ -78,7 +78,6 @@ VALUES(1, 1),
 -- Queries
 
 -- The albums and the tracks that they belong to
-/*
 SELECT A.album_title AS "Name of Album", T.track_title AS "Name of Track"
 FROM albums AS A 
 INNER JOIN albums_tracks AS ASTS 
@@ -86,10 +85,8 @@ ON A.album_id = ASTS.album_id
 INNER JOIN tracks AS T
 ON ASTS.track_id = T.track_id
 ORDER BY A.album_title ASC;
-*/
 
 -- The albums or albums that each track belongs to 
-/*
 SELECT T.track_title AS "Name of Tracks", A.album_title AS "Name of Album"
 FROM tracks AS T 
 INNER JOIN albums_tracks AS ASTS
@@ -97,16 +94,13 @@ ON T.track_id = ASTS.track_id
 INNER JOIN albums AS A
 ON ASTS.album_id = A.album_id
 ORDER BY T.track_title ASC;
-*/
 
 -- The number of songs an album has 
-/*
 SELECT A.album_title AS "Name of Album", COUNT (ASTS.track_id) AS "Number of Tracks"
 FROM albums AS A 
 INNER JOIN albums_tracks AS ASTS
 ON A.album_id = ASTS.album_id
 GROUP BY A.album_title;
-*/
 
 -- The number of albums a particular track is in
 SELECT T.track_title AS "Name of Track", COUNT(ASTS.album_id) AS "Name of Album"
