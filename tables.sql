@@ -86,7 +86,7 @@ INNER JOIN tracks AS T
 ON ASTS.track_id = T.track_id
 ORDER BY A.album_title ASC;
 
--- The albums or albums that each track belongs to 
+-- The album or albums that each track belongs to 
 SELECT T.track_title AS "Name of Tracks", A.album_title AS "Name of Album"
 FROM tracks AS T 
 INNER JOIN albums_tracks AS ASTS
